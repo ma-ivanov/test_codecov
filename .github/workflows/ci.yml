@@ -16,5 +16,7 @@ jobs:
         run: npm run test:first
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
+        with:
+          flags: first
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_ORG_TOKEN }}
