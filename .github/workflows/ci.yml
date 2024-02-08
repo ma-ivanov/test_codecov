@@ -14,12 +14,10 @@ jobs:
         run: npm install
       - name: Run tests and collect coverage
         run: npm run test:first
-      - id: commit
-        uses: prompt/actions-commit-hash@v3
       - name: Coveralls
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
           flag-name: first
         env:
-          COVERALLS_SERVICE_NUMBER: ${{ steps.commit.outputs.short }}
+          COVERALLS_SERVICE_NUMBER: ${GITHUB_SHA::7}
