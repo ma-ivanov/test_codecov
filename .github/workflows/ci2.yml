@@ -29,3 +29,4 @@ jobs:
           flag-name: second
         env:
           COVERALLS_SERVICE_JOB_ID: ${{ github.sha }}
+          COVERALLS_SERVICE_JOB_NUMBER: 1
