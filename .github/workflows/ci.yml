@@ -26,7 +26,17 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
-          parallel-finish: true
+          parallel: true
+          carryforward: first,second
+          flag-name: first
+        env:
+          COVERALLS_SERVICE_NUMBER: ${{ github.sha }}
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          parallel-finished: true
           carryforward: first,second
           flag-name: first
         env:
