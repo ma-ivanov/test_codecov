@@ -5,8 +5,8 @@ on:
     branches:
       - '**'
     paths:
-      - 'apps/first/**'
-      - 'apps/calculator.ts'
+      - 'app/first/**'
+      - 'app/calculator.ts'
 
 jobs:
   run:
