@@ -1,5 +1,13 @@
 name: Workflow 1st for Codecov example-typescript
-on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - '**'
+    paths:
+      - 'apps/first/**'
+      - 'apps/calculator.ts'
+
 jobs:
   run:
     runs-on: ubuntu-latest
